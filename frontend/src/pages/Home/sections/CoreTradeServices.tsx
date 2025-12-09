@@ -1,0 +1,70 @@
+import React from "react";
+
+const CoreTradeServices: React.FC = () => {
+  return (
+    <section className="bg-white py-12">
+      <div className="max-w-6xl mx-auto px-6">
+        <h3 className="text-2xl md:text-3xl font-bold text-[#0F6EB3] text-center">
+          Our Core Trade Services
+        </h3>
+        <p className="text-center mt-2 text-[#0B3B63] max-w-2xl mx-auto">
+          Comprehensive export solutions for sourcing, compliance, and global shipping.
+        </p>
+
+        <div className="mt-8 grid md:grid-cols-2 gap-6 items-stretch">
+
+          {/* LEFT CARD — centered text & reduced height */}
+          <div className="bg-[#0F6EB3] text-white rounded-2xl p-6 shadow-lg 
+                          flex flex-col justify-center min-h-[220px]">
+            <h4 className="font-semibold text-xl mb-4">
+              Export Services – End-to-End Execution
+            </h4>
+            <ul className="space-y-2 text-lg">
+              <li>• Verified Product Sourcing</li>
+              <li>• Quality Inspection & Compliance</li>
+              <li>• Export-Grade Packaging</li>
+              <li>• Freight & Logistics Coordination</li>
+              <li>• Complete Documentation & Customs Handling</li>
+              <li>• Real-Time Shipment Updates</li>
+            </ul>
+          </div>
+
+          {/* RIGHT CARD — reduced height, same size as left */}
+          <div className="relative rounded-2xl overflow-hidden shadow-lg min-h-[220px]">
+            <img
+              src="/images/trade.png"
+              alt="Warehouse"
+              className="w-full h-full object-cover"
+            />
+
+            {/* Overlay */}
+            <div
+              className="absolute inset-0"
+              style={{ backgroundColor: "#0F6EB34D" }}
+            />
+
+            {/* Text centered */}
+            <div className="absolute inset-0 flex flex-col justify-end px-6 z-10">
+              <h5 className="font-semibold text-white text-xl drop-shadow-lg">
+                Global Sourcing
+              </h5>
+              <p className="text-white text-sm mt-2 mb-4 max-w-sm drop-shadow">
+                Tailor-made global sourcing solutions based on buyer specifications,
+                volume, and destination markets.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <button className="px-5 py-2 rounded-full bg-[#0F6EB3] text-white font-medium shadow">
+            View All Services
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CoreTradeServices;
