@@ -1,62 +1,132 @@
 import React from "react";
 
-const ExecutedExports: React.FC = () => {
-  const playlistImages = [
-    "/images/farm1.png",
-    "/images/farm2.png",
-    "/images/farm3.png",
-    "/images/farm4.png",
-    "/images/farm5.png",
-  ];
+// Steps
+const steps = [
+  { title: "Procurement", text: "Specialised Source Points for our products" },
+  { title: "Sorting & Cleaning", text: "Handpicked Quality come from here" },
+  { title: "Packaging", text: "Best-in-class materials to ensure safe transit" },
+  { title: "Delivery", text: "We plan each activity as per shipping line schedules" },
+];
 
+// Animations
+const animationCSS = `
+@keyframes rotateRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dotSlide {
+  0% { transform: translateX(0); opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { transform: translateX(70px); opacity: 0.3; }
+}
+
+@keyframes glowPulse {
+  0% { transform: scale(1); opacity: 0.45; }
+  50% { transform: scale(1.22); opacity: 0.75; }
+  100% { transform: scale(1); opacity: 0.45; }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(35px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+`;
+
+const ExecutedExports = () => {
   return (
-    <section className="bg-gray-50 py-12">
-      <div className="max-w-6xl mx-auto px-6">
-        <h3 className="text-2xl md:text-3xl font-bold text-[#0F6EB3] text-center">
+    <section className="py-16 bg-white overflow-hidden select-none">
+      <style>{animationCSS}</style>
+
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        
+        {/* Heading */}
+        <h2 className="text-4xl font-bold text-[#0F6EB3] animate-[fadeUp_0.8s_ease-out]">
           Professionally Executed Exports
-        </h3>
-        <p className="text-center mt-2 text-[#0B3B63]">
-          End-to-end export operations managed with precision, compliance, and global delivery standards.
+        </h2>
+        <p className="mt-2 text-[#0B3B63] text-lg animate-[fadeUp_1s_ease-out]">
+          High-quality products, verified processes, and seamless global delivery.
         </p>
-
-        {/* Parent Grid → Make equal height using flex */}
-        <div className="mt-8 grid md:grid-cols-3 gap-6 items-stretch">
-          
-          {/* LEFT CARD */}
-          <div className="md:col-span-2 h-full">
-            <div className="rounded-xl overflow-hidden shadow h-full">
-              <img
-                src="/images/woman2.png"
-                alt="Exports"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* RIGHT CARD */}
-          <aside className="bg-white  rounded-xl shadow p-4 h-full flex flex-col">
-            <div className="text-sm text-gray-500 mb-3">Playlist</div>
-
-            <ul className="space-y-3   overflow-y-auto">
-              {playlistImages.map((imgSrc, i) => (
-                <li key={i} className="flex mb-2 py-1  bg-[#F3F7FB]  items-center gap-3">
-                  <img
-                    src={imgSrc}
-                    className="w-14 h-10 rounded-md object-cover"
-                    alt={`playlist-${i}`}
-                  />
-                  <div>
-                    <div className="text-sm font-semibold text-[#0B3B63]">
-                      Dummy Agriculture life of a man
-                    </div>
-                    <div className="text-xs text-gray-500">1.2k views</div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </aside>
-
+        <div className="mt-6">
+          <button className="bg-[#0F6EB3] text-white font-medium px-8 py-3 rounded-full shadow">
+            Streamlined Product Delivery Process
+          </button>
         </div>
+
+        {/* Circles */}
+        <div
+          className="
+            mt-16 flex flex-col md:flex-row justify-center items-center
+            gap-0 md:gap-0
+          "
+        >
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="
+                relative flex flex-col items-center
+              "
+              style={{ animation: `fadeUp 0.8s ease-out ${index * 0.25}s both` }}
+            >
+              {/* OUTER RING CONTAINER — ONLY THIS OVERLAPS */}
+              <div className="relative w-64 h-64 flex items-center justify-center md:mx-[-8px]">
+
+                {/* OUTER RING (overlapping) */}
+                <div className="absolute w-full h-full rounded-full border border-[#BFE2F2]" />
+
+                {/* INNER CONTENT (NO OVERLAP BEHAVIOR) */}
+                <div className="absolute inset-0 flex items-center justify-center">
+
+                  {/* Glow */}
+                  <div
+                    className="absolute w-40 h-40 rounded-full bg-[#0F6EB3]/25 blur-xl"
+                    style={{ animation: "glowPulse 3s infinite ease-in-out" }}
+                  ></div>
+
+                  {/* Rotating dotted ring */}
+                  <div
+                    className="absolute w-[78%] h-[78%] rounded-full border-2 border-dashed border-[#86C8DE]"
+                    style={{ animation: "rotateRing 12s linear infinite" }}
+                  ></div>
+
+                  {/* Center Circle */}
+                 <div
+                  className="
+                    relative z-10 w-36 h-36 rounded-full 
+                    bg-gradient-to-br from-[#0F6EB3] to-[#0B84C6]
+                    flex flex-col items-center justify-center text-white font-semibold
+                    text-center px-3
+                    shadow-md transition-all duration-300 ease-out
+                    hover:scale-110 hover:shadow-[0_0_55px_rgba(15,110,179,0.55)]
+                  "
+                >
+                  <span>{step.title}</span>
+                  <span className="text-xs mt-1 opacity-80">{step.text}</span>
+                </div>
+
+
+                </div>
+              </div>
+
+              {/* CONNECTOR — DO NOT CHANGE FUNCTIONALITY */}
+              {index !== steps.length - 1 && (
+                <div className="absolute top-1/2 right-[-85px] hidden md:flex items-center">
+
+                  {/* Moving dot */}
+                  <span
+                    className="w-2 h-2 bg-[#0F6EB3] rounded-full"
+                    style={{ animation: "dotSlide 2s ease-out infinite" }}
+                  ></span>
+
+                  {/* Dashed line from OUTER ring → NEXT INNER ring */}
+                  <div className="w-20 border-t border-dashed border-[#86C8DE] ml-2"></div>
+                </div>
+              )}
+
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
