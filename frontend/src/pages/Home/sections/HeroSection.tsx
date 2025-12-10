@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
               Explore Products
             </button>
 
-            <button className="px-6 py-3 bg-transparent border border-white/60 text-white font-semibold rounded-full shadow-md hover:bg-white/10 transition">
+            <button className="px-6 py-3 bg-[#0F6EB3]  text-white font-semibold rounded-full shadow-md hover:bg-white/10 transition">
               Explore Products
             </button>
           </div>

@@ -17,11 +17,16 @@ const WhoWeAre: React.FC = () => {
         </p>
 
         <div className="mt-8 flex justify-center">
-          <button className="px-5 py-2 rounded-full bg-[#0F6EB3] text-white font-medium shadow">
+          <button className="flex items-center gap-3 px-6 py-2 rounded-full bg-[#0F6EB3] text-white font-medium shadow">
             Know More
+
+            <span className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
+              <span className="text-[#0F6EB3] font-bold text-lg">⬈</span>
+            </span>
+
           </button>
-          <span className="w-3 h-3 rounded-full bg-white"></span>
         </div>
+
       </div>
     </section>
   );

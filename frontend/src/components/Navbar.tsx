@@ -13,10 +13,11 @@ const Navbar: React.FC = () => {
             alt="PintGlobal"
             className="h-10 w-auto object-contain"
           />
+          <h1 className="text-2xl font-bold text-[#0F6EB3]">PintGlobal</h1>
         </div>
 
         {/* Center: Links */}
-        <ul className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+        <ul className="hidden md:flex  gap-6 text-sm font-medium text-gray-700">
           {["Home", "About Us", "Services", "Products", "Global Markets", "Why Us", "Gallery"].map((item) => (
             <li
               key={item}
