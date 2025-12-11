@@ -12,7 +12,11 @@ interface ProductsPreviewProps {
   products: ProductItem[];
 }
 
-const Productsreview: React.FC<ProductsPreviewProps> = ({ heading, subheading, products }) => {
+const Productsreview: React.FC<ProductsPreviewProps> = ({
+  heading,
+  subheading,
+  products,
+}) => {
   return (
     <section className="bg-white py-14">
       <div className="max-w-7xl mx-auto px-6">
@@ -27,27 +31,36 @@ const Productsreview: React.FC<ProductsPreviewProps> = ({ heading, subheading, p
         </p>
 
         {/* Cards */}
-        <div className="mt-12 flex flex-col md:flex-row justify-center gap-8">
+        <div
+          className="
+            mt-12 
+            grid 
+            grid-cols-1 
+            sm:grid-cols-2 
+            lg:grid-cols-3 
+            gap-8
+          "
+        >
           {products.map((p, index) => (
             <div
               key={index}
-              className="flex-shrink-0 rounded-xl overflow-hidden shadow-lg bg-white w-full md:w-1/3"
+              className="rounded-xl overflow-hidden shadow-lg bg-white"
             >
-              {/* Image */}
-              <div className="w-full h-52 overflow-hidden">
+              {/* Image Wrapper (Fixed height + responsive fit) */}
+              <div className="w-full h-52 sm:h-64 lg:h-72 overflow-hidden">
                 <img
                   src={p.img}
                   alt={p.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
                 />
               </div>
 
               {/* Footer */}
-              <div className="bg-[#E7F3FF] px-4 py-4">
+              <div className="bg-[#E7F3FF] px-4 py-4 h-full">
                 <h4 className="font-semibold text-[#0F6EB3] text-lg">
                   {p.title}
                 </h4>
-                <p className="text-sm text-[#0B3B63] mt-1">
+                <p className="text-sm text-[#0B3B63] mt-1 leading-relaxed">
                   {p.desc}
                 </p>
               </div>

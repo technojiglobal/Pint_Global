@@ -72,7 +72,7 @@ const ProductsPreview: React.FC<ProductsPreviewProps> = ({
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105  transition-transform duration-300"
                   />
                 </div>
 
