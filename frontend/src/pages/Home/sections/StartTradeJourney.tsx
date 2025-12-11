@@ -2,7 +2,7 @@ import React from "react";
 
 const StartTradeJourney: React.FC = () => {
   return (
-    <section className="py-16"> 
+    <section className="py-10"> 
       {/* SECTION SHOULD NOT BE FULL-WIDTH BLUE */}
 
       <div className="max-w-6xl mx-auto px-6">

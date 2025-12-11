@@ -12,7 +12,7 @@ const TradeOperations: React.FC = () => {
 ];
 
   return (
-    <section className="w-full py-16 px-6 md:px-10">
+    <section className="w-full  px-6 md:px-10">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}

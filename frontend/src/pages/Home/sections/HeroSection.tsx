@@ -1,6 +1,7 @@
 import React from "react";
-
+import {useNavigate} from "react-router-dom";
 const HeroSection: React.FC = () => {
+  const navigate=useNavigate();
   return (
     <section className="relative w-full h-[85vh] md:h-[88vh] overflow-hidden">
 
@@ -33,13 +34,15 @@ const HeroSection: React.FC = () => {
           </p>
 
           {/* Buttons */}
-          <div className="flex gap-4 mt-8">
-            <button className="px-6 py-3 bg-white text-[#0F6EB3] font-semibold rounded-full shadow-md hover:bg-gray-100 transition">
+          <div className="flex gap-4 mt-8" >
+            <button className="px-6 py-3 bg-white text-[#0F6EB3] font-semibold rounded-full shadow-md hover:bg-gray-100 transition"
+            onClick={()=>navigate("/products")}>
               Explore Products
             </button>
 
-            <button className="px-6 py-3 bg-[#0F6EB3]  text-white font-semibold rounded-full shadow-md hover:bg-white/10 transition">
-              Explore Products
+            <button className="px-6 py-3 bg-[#0F6EB3]  text-white font-semibold rounded-full shadow-md hover:bg-white/10 transition"
+            onClick={()=>navigate("/contact")}>
+              Contact Us
             </button>
           </div>
 

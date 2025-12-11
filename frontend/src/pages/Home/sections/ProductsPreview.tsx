@@ -25,7 +25,7 @@ const ProductsPreview: React.FC = () => {
   };
 
   return (
-    <section className="bg-white py-14">
+    <section className="bg-white py-10">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
@@ -92,7 +92,7 @@ const ProductsPreview: React.FC = () => {
 
         {/* Explore Button */}
         <div className="mt-10 flex justify-center">
-          <button className="flex items-center gap-3 px-6 py-2 rounded-full bg-[#0F6EB3] text-white font-medium shadow">
+          <button className="flex items-center gap-3 px-6 py-2 rounded-full bg-[#0F6EB3] text-white  shadow">
             Explore Products
             <span className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
               <span className="text-[#0F6EB3] font-bold text-lg">⬈</span>

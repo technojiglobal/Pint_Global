@@ -2,7 +2,7 @@ import React from "react";
 
 const WhoWeAre: React.FC = () => {
   return (
-    <section className="bg-[#0F6EB30D] pt-12 pb-10">
+    <section className="bg-[#0F6EB30D] pt-12 pb-8">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl text-center font-extrabold text-[#0F6EB3]">Who We Are</h2>
         <p className="mt-6 max-w-3xl mx-auto text-center text-[#0F6EB3]">
@@ -17,7 +17,7 @@ const WhoWeAre: React.FC = () => {
         </p>
 
         <div className="mt-8 flex justify-center">
-          <button className="flex items-center gap-3 px-6 py-2 rounded-full bg-[#0F6EB3] text-white font-medium shadow">
+          <button className="flex items-center gap-3 px-6 py-2 rounded-full bg-[#0F6EB3] text-white  shadow">
             Know More
 
             <span className="w-7 h-7 bg-white rounded-full flex items-center justify-center">

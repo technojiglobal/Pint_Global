@@ -35,7 +35,7 @@ const animationCSS = `
 
 const ExecutedExports = () => {
   return (
-    <section className="py-16 bg-white overflow-hidden select-none">
+    <section className="py-10 bg-white overflow-hidden select-none">
       <style>{animationCSS}</style>
 
       <div className="max-w-6xl mx-auto px-6 text-center">

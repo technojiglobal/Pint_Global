@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Instagram, Facebook, Linkedin } from "lucide-react";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#0F6EB3] text-white py-10">
@@ -10,7 +10,50 @@ const Footer: React.FC = () => {
           </div>
           <p className="text-sm mt-3 text-gray-200">A modern export–import company connecting high-quality 
             Indian products with global markets through trusted 
-            sourcing, transparent trade practices, and reliable logistics..</p>
+            sourcing, transparent trade practices, and reliable logistics..
+          </p>
+          <div className="mt-4 flex items-center gap-3">
+  <ul className="flex flex-row gap-4 sm:gap-6">
+
+    {/* Instagram */}
+    <li>
+      <a
+        href="https://www.instagram.com/pintglobal?igsh=NnVyMm82OWh0cTB1&utm_source=qr"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:opacity-80 transition"
+      >
+         <Instagram className="w-6 h-6" />
+      </a>
+    </li>
+
+    {/* Facebook */}
+    <li>
+      <a
+        href="https://www.facebook.com/share/1Dc8heF9ZY/?mibextid=wwXIfr"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:opacity-80 transition"
+      >
+        <Facebook className="w-6 h-6" />
+      </a>
+    </li>
+
+    {/* Linkedin */}
+    <li>
+      <a
+        href="https://www.linkedin.com/in/mukesh-peddada-6a2129106?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:opacity-80 transition"
+      >
+       <Linkedin className="w-6 h-6" />
+      </a>
+    </li>
+
+  </ul>
+</div>
+
         </div>
 
         <div>
@@ -57,10 +100,20 @@ const Footer: React.FC = () => {
         <div className="mx-4">© 2025 PintGlobal. All Rights Reserved.</div>
 
         {/* Right Side Links */}
-        <div className="flex items-center  mx-4 gap-4">
-          <span className="cursor-pointer hover:text-white"> .Privacy Policy</span>
-          <span className="cursor-pointer hover:text-white"> .Terms & Conditions</span>
+       <div className="flex items-center mx-4 gap-6">
+
+          <span className="flex items-center justify-center cursor-pointer hover:text-white gap-2">
+            <span className="w-2 h-2 bg-white rounded-full"></span>
+            Privacy Policy
+          </span>
+
+          <span className="flex items-center cursor-pointer hover:text-white gap-2">
+            <span className="w-2 h-2 bg-white rounded-full"></span>
+            Terms & Conditions
+          </span>
+
         </div>
+
 
       </div>
 
