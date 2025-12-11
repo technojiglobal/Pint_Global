@@ -1,0 +1,20 @@
+interface ButtonProps {
+  text: string;
+  onClick?: () => void;
+}
+
+const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+  return (
+    <button
+      onClick={onClick}
+      className="flex items-center gap-3 px-6 py-2 rounded-full bg-[#0F6EB3] text-white font-medium shadow"
+    >
+      {text}
+      <span className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
+        <span className="text-[#0F6EB3] font-bold text-lg">⬈</span>
+      </span>
+    </button>
+  );
+};
+
+export default Button;
