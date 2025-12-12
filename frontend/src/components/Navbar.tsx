@@ -9,9 +9,7 @@ const Navbar: React.FC = () => {
     { label: "About Us", path: "/about" },
     { label: "Services", path: "/services" },
     { label: "Products", path: "/products" },
-    { label: "Global Markets", path: "/global-markets" },
-    { label: "Why Us", path: "/why-us" },
-    { label: "Gallery", path: "/gallery" },
+   
   ];
 
   return (
@@ -38,7 +36,10 @@ const Navbar: React.FC = () => {
                   to={item.path}
                   className={({ isActive }) =>
                     `cursor-pointer hover:text-[#0F6EB3] transition ${
-                      isActive ? "text-[#0F6EB3] font-semibold underline" : ""
+                      isActive
+  ? "text-[#0F6EB3] font-semibold after:block after:h-[3px] after:w-full after:bg-[#0F6EB3] after:rounded-full after:mt-1"
+  : "after:block after:h-[3px] after:w-0 after:bg-[#0F6EB3] after:rounded-full after:mt-1 after:transition-all after:duration-3000 hover:after:w-6"
+
                     }`
                   }
                 >

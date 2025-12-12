@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
         <div className="max-w-3xl">
 
           {/* Heading */}
-          <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight drop-shadow-[0_6px_10px_rgba(0,0,0,0.35)]">
+          <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight ">
             Global Trade. Local Trust.
           </h1>
 

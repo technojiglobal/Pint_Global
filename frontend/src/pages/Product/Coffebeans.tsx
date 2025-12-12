@@ -2,22 +2,22 @@ import React from "react";
 
 const Coffebeans: React.FC = () => {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16">
+    <section className="max-w-6xl mx-auto px-4 py-16">
       
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0A66C2]">
         Green Coffee Beans
       </h2>
-      <p className="text-center  mt-2">
+      <p className="text-center text-black mt-2">
         Premium unroasted coffee beans sourced directly from trusted Indian plantations.
       </p>
 
       {/* Content Box */}
-      <div className="mt-10 bg-[#E8F2FF] rounded-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-center">
+      <div className="mt-8 bg-[#F3F7FB] rounded-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-center">
 
         {/* Left Image Placeholder */}
         <div className="w-full md:w-1/2">
-          <div className="w-full h-64 bg-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
+          <div className="w-full h-72 bg-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
             <img
               src="/images/coffe-beans.png"
               alt="Organic Arabica Coffee Beans"
@@ -28,7 +28,7 @@ const Coffebeans: React.FC = () => {
 
         {/* Right Text */}
         <div className="w-full md:w-1/2">
-          <h3 className="text-xl md:text-2xl font-bold text-[#0A66C2]">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#0A66C2]">
             Organic Arabica Coffee Beans
           </h3>
 

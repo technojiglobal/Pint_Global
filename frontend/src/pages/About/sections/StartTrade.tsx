@@ -50,21 +50,21 @@ const StartTrade: React.FC = () => {
   };
 
   return (
-    <section className="max-w-6xl mx-auto px-6 md:px-15 pb-20">
-      <div className="bg-[#0F6EB3] rounded-2xl p-6 md:p-10 text-white shadow-lg">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10 pb-12 md:pb-20">
+      <div className="bg-[#0F6EB3] rounded-2xl p-4 sm:p-6 md:p-10 text-white shadow-lg">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
 
           {/* Left */}
           <div>
-            <h2 className="text-2xl md:text-3xl text-white font-bold">
+            <h2 className="text-xl sm:text-2xl md:text-3xl text-white font-bold leading-tight">
               Start Your Trade Journey<br />With Us
             </h2>
-            <p className="mt-3 text-white text-sm">
+            <p className="mt-3 text-white text-xs sm:text-sm leading-relaxed">
               We're ready to support your sourcing and export requirements.
             </p>
 
-            <div className="mt-6 ml-20 w-full max-w-xs overflow-hidden rounded-lg border-4 border-white/20">
+            <div className="mt-6 w-full max-w-xs overflow-hidden rounded-lg">
               <img
                 src="/images/start-trade.png"
                 className="object-cover w-full h-full"
@@ -74,69 +74,70 @@ const StartTrade: React.FC = () => {
           </div>
 
           {/* Right */}
-          <div>
-            <div className="bg-white text-black rounded-lg p-6 shadow-lg">
-              <h3 className="text-xl md:text-3xl font-bold text-[#0F6EB3]">
+          <div className="h-full flex justify-center">
+            <div className="bg-white text-black rounded-lg p-4 sm:p-6 shadow-lg h-full flex flex-col max-w-sm w-full">
+              <h3 className="text-lg sm:text-2xl md:text-3xl font-bold text-[#0F6EB3]">
                 Join Hands to Grow Together
               </h3>
 
-              <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-                <div className="grid grid-cols-2 gap-3">
-                  <input
-                    name="firstName"
-                    value={form.firstName}
-                    onChange={handleChange}
-                    className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-3 py-2 text-sm"
-                    placeholder="First Name"
-                    required
-                  />
-                  <input
-                    name="lastName"
-                    value={form.lastName}
-                    onChange={handleChange}
-                    className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-3 py-2 text-sm"
-                    placeholder="Last Name"
-                  />
-                </div>
+              <form onSubmit={handleSubmit} className="mt-4 space-y-3 flex flex-col flex-grow justify-between">
 
-                <input
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-3 py-2 w-full text-sm"
-                  placeholder="Your Email"
-                  required
-                />
+  <div className="grid grid-cols-2 gap-2 sm:gap-3">
+    <input
+      name="firstName"
+      value={form.firstName}
+      onChange={handleChange}
+      className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-2 sm:px-3 py-2 text-xs sm:text-sm w-full"
+      placeholder="First Name"
+      required
+    />
 
-                <input
-  name="phone"
-  value={form.phone}
-  onChange={(e) => {
-    // Allow only numbers and restrict to 10 digits
-    const value = e.target.value.replace(/\D/g, "").slice(0, 10);
-    setForm({ ...form, phone: value });
-  }}
-  className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-3 py-2 w-full text-sm"
-  placeholder="Phone Number"
-  required
-/>
+    <input
+      name="lastName"
+      value={form.lastName}
+      onChange={handleChange}
+      className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-2 sm:px-3 py-2 text-xs sm:text-sm w-full"
+      placeholder="Last Name"
+    />
+  </div>
 
+  <input
+    name="email"
+    value={form.email}
+    onChange={handleChange}
+    className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-2 sm:px-3 py-2 w-full text-xs sm:text-sm"
+    placeholder="Your Email"
+    required
+  />
 
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-3 py-2 w-full text-sm h-24 resize-none"
-                  placeholder="Message"
-                />
+  <input
+    name="phone"
+    value={form.phone}
+    onChange={(e) => {
+      const value = e.target.value.replace(/\D/g, "").slice(0, 10);
+      setForm({ ...form, phone: value });
+    }}
+    className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-2 sm:px-3 py-2 w-full text-xs sm:text-sm"
+    placeholder="Phone Number"
+    required
+  />
 
-                <button
-                  type="submit"
-                  className="w-full bg-[#0F6EB3] text-white py-2 rounded-md font-semibold hover:bg-sky-800"
-                >
-                  Get A Quote Now
-                </button>
-              </form>
+  <textarea
+    name="message"
+    value={form.message}
+    onChange={handleChange}
+    className="border border-[#0F6EB347] bg-[#0F6EB312] outline-none rounded-md px-2 sm:px-3 py-2 w-full text-xs sm:text-sm h-20 sm:h-24 resize-none"
+    placeholder="Message"
+  />
+
+  <button
+    type="submit"
+    className="w-full bg-[#0F6EB3] text-white py-2 rounded-md font-semibold text-sm hover:bg-sky-800"
+  >
+    Get A Quote Now
+  </button>
+</form>
+
             </div>
           </div>
 
