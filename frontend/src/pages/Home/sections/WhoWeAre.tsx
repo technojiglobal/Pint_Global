@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../../../components/Button";
+
 
 const WhoWeAre: React.FC = () => {
+  const navigate=useNavigate();
   return (
     <section className="bg-[#0F6EB30D] pt-12 pb-8">
       <div className="max-w-6xl mx-auto px-6">
@@ -16,16 +20,7 @@ const WhoWeAre: React.FC = () => {
           help international buyers source with complete confidence.
         </p>
 
-        <div className="mt-8 flex justify-center">
-          <button className="flex items-center gap-3 px-6 py-2 rounded-full bg-[#0F6EB3] text-white  shadow">
-            Know More
-
-            <span className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
-              <span className="text-[#0F6EB3] font-bold text-lg">⬈</span>
-            </span>
-
-          </button>
-        </div>
+        <Button text="Know More"  onClick={()=>navigate("/about")}/>
 
       </div>
     </section>

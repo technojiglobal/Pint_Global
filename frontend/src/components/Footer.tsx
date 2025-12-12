@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Instagram, Facebook, Linkedin } from "lucide-react";
 const Footer: React.FC = () => {
+  const navigate=useNavigate();
   return (
     <footer className="bg-[#0F6EB3] text-white py-10">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-6">
@@ -54,20 +57,24 @@ const Footer: React.FC = () => {
   </ul>
 </div>
 
-        </div>
+</div>
+
+       
 
         <div>
           <h6 className="font-semibold mb-2">Quick Links</h6>
           <ul className="text-sm space-y-1">
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Services</li>
-            <li>Products</li>
-            <li>Why Choose Us</li>
-            <li>Global Markets</li>
-            <li>Contact</li>
+            <li><Link className="hover:underline" to="/">Home</Link></li>
+            <li><Link className="hover:underline" to="/about">About Us</Link></li>
+            <li><Link className="hover:underline" to="/services">Services</Link></li>
+            <li><Link className="hover:underline" to="/products">Products</Link></li>
+            <li><Link className="hover:underline" to="/why-us">Why Choose Us</Link></li>
+            <li><Link className="hover:underline" to="/global-markets">Global Markets</Link></li>
+            <li><Link className="hover:underline" to="/contact">Contact</Link></li>
           </ul>
         </div>
+
+
 
         <div>
           <h6 className="font-semibold mb-2">Services</h6>
