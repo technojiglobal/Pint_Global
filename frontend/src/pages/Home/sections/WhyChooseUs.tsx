@@ -19,17 +19,17 @@ const WhyChooseUs: React.FC = () => {
 
           {/* LEFT — IMAGE */}
           <div>
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            <div className="rounded-2xl overflow-hidden border-3 border-[#0F6EB3] shadow-lg">
               <img
-                src="/images/woman.png"
+                src="/images/woman3.png"
                 alt="Why Choose Us"
-                className="w-full h-[450px] object-cover"
+                className="w-full h-[560px]  object-cover"
               />
             </div>
           </div>
 
           {/* RIGHT — ICONBOX LIST */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-8">
             <IconBox
               icon="/icons/suppliers.png"
               text="Verified Suppliers & Global Buyers Across 10+ Countries"

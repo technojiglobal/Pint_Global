@@ -18,7 +18,7 @@ const Productsreview: React.FC<ProductsPreviewProps> = ({
   products,
 }) => {
   return (
-    <section className="bg-white py-14">
+    <section className="bg-[#0F6EB30D] py-14">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
@@ -26,7 +26,7 @@ const Productsreview: React.FC<ProductsPreviewProps> = ({
           {heading}
         </h3>
 
-        <p className="text-center mt-2 text-[#0B3B63]">
+        <p className="text-center mt-2 text-lg">
           {subheading}
         </p>
 
@@ -44,10 +44,11 @@ const Productsreview: React.FC<ProductsPreviewProps> = ({
           {products.map((p, index) => (
             <div
               key={index}
-              className="rounded-xl overflow-hidden shadow-lg bg-white"
+              className="rounded-xl overflow-hidden shadow-md bg-white"
             >
               {/* Image Wrapper (Fixed height + responsive fit) */}
-              <div className="w-full h-52 sm:h-64 lg:h-72 overflow-hidden">
+              <div className="p-1">
+              <div className="w-full  rounded-t-xl h-52 sm:h-64 lg:h-72 overflow-hidden">
                 <img
                   src={p.img}
                   alt={p.title}
@@ -56,13 +57,14 @@ const Productsreview: React.FC<ProductsPreviewProps> = ({
               </div>
 
               {/* Footer */}
-              <div className="bg-[#E7F3FF] px-4 py-4 h-full">
-                <h4 className="font-semibold text-[#0F6EB3] text-lg">
+              <div className="bg-[#E7F3FF] px-4 py-4 rounded-b-xl h-full border-t-4 border-white">
+                <h4 className="font-bold text-[#0F6EB3] text-xl">
                   {p.title}
                 </h4>
-                <p className="text-sm text-[#0B3B63] mt-1 leading-relaxed">
+                <p className="text-sm text-[#0F6EB3] font-semibold mt-1 leading-relaxed">
                   {p.desc}
                 </p>
+              </div>
               </div>
             </div>
           ))}
