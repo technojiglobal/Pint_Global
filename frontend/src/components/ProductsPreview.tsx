@@ -33,7 +33,7 @@ const ProductsPreview: React.FC<ProductsPreviewProps> = ({
   };
 
   return (
-    <section className="bg-white py-14">
+    <section className="bg-white py-10">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
@@ -72,7 +72,7 @@ const ProductsPreview: React.FC<ProductsPreviewProps> = ({
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105  transition-transform duration-300"
                   />
                 </div>
 

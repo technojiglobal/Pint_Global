@@ -2,7 +2,7 @@ import React from "react";
 
 const Certifications: React.FC = () => {
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-8">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h3 className="text-2xl md:text-3xl text-[#0F6EB3] font-bold">Certifications & Licenses</h3>
 

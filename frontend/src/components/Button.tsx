@@ -5,6 +5,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
   return (
+     <div className="flex justify-center py-5">
     <button
       onClick={onClick}
       className="flex items-center gap-3 px-6 py-2 rounded-full bg-[#0F6EB3] text-white font-medium shadow"
@@ -14,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
         <span className="text-[#0F6EB3] font-bold text-lg">⬈</span>
       </span>
     </button>
+    </div>
   );
 };
 

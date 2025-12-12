@@ -10,7 +10,7 @@ import Product from "./pages/Product/Product";
 const App: React.FC = () => {
   return (
     <Router>
-      <header className="absolute left-0 right-0 top-6 z-20">
+      <header className="fixed left-0 right-0 top-6 z-20">
         <Navbar />
       </header>
 

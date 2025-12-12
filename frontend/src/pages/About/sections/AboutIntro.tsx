@@ -21,10 +21,7 @@ const AboutIntro: React.FC = () => {
       <div className="relative z-10 h-full flex items-center">
         <div className="px-6 md:px-16 max-w-4xl">
 
-          {/* Heading */}
-          <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight drop-shadow-[0_6px_10px_rgba(0,0,0,0.35)] text-left">
-            Global Trade. Local Trust.
-          </h1>
+         
 
           {/* Subheading with line break after 'with' */}
           <p className="text-white mt-6 text-base sm:text-lg md:text-xl leading-relaxed text-left">
