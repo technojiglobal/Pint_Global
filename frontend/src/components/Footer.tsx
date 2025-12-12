@@ -101,28 +101,30 @@ const Footer: React.FC = () => {
         
       </div>
 
-      <div className="mt-8 border-t-2 border-white pt-4 flex justify-between items-center text-sm text-gray-200">
+     <div
+  className="mt-8 border-t-2 border-white pt-4 
+  flex flex-col md:flex-row justify-between items-center 
+  gap-4 text-sm text-gray-200"
+>
+  {/* Left Text */}
+  <div className="mx-4">
+    © 2025 PintGlobal. All Rights Reserved.
+  </div>
 
-        {/* Left Text */}
-        <div className="mx-4">© 2025 PintGlobal. All Rights Reserved.</div>
+  {/* Right Side Links */}
+  <div className="flex items-center mx-4 gap-6">
+    <span className="flex items-center cursor-pointer hover:text-white gap-2">
+      <span className="w-2 h-2 bg-white rounded-full"></span>
+      Privacy Policy
+    </span>
 
-        {/* Right Side Links */}
-       <div className="flex items-center mx-4 gap-6">
+    <span className="flex items-center cursor-pointer hover:text-white gap-2">
+      <span className="w-2 h-2 bg-white rounded-full"></span>
+      Terms & Conditions
+    </span>
+  </div>
+</div>
 
-          <span className="flex items-center justify-center cursor-pointer hover:text-white gap-2">
-            <span className="w-2 h-2 bg-white rounded-full"></span>
-            Privacy Policy
-          </span>
-
-          <span className="flex items-center cursor-pointer hover:text-white gap-2">
-            <span className="w-2 h-2 bg-white rounded-full"></span>
-            Terms & Conditions
-          </span>
-
-        </div>
-
-
-      </div>
 
     </footer>
   );

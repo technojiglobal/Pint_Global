@@ -5,6 +5,7 @@ import Coffebeans from './Coffebeans'
 import ProductsPreview from '../../components/ProductsPreview'
 import Productsreview from './Productsreview'
 import Footer from '../../components/Footer'
+import StartTrade from '../About/sections/StartTrade'
 const productData1 = [
   { title: "Pomegranate", img: "/images/pomegranate.png", desc: "Naturally grown, export-grade pomegranates with rich color and freshness." },
   { title: "Banana", img: "/images/banana.png", desc: "Fresh Indian bananas known for natural sweetness and long shelf life." },
@@ -73,6 +74,7 @@ const Product = () => {
   products={productData5}
   />
         <Certifications/>
+        <StartTrade/>
         <Footer/>
     </div>
   )
