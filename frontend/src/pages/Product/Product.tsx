@@ -1,4 +1,4 @@
-import React from 'react'
+
 import About from './About'
 import Certifications from '../Home/sections/Certifications'
 import Coffebeans from './Coffebeans'
