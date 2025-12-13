@@ -13,7 +13,7 @@ const CoreTradeServices: React.FC = () => {
           Comprehensive export solutions for sourcing, compliance, and global shipping.
         </p>
 
-        <div className="mt-8 grid md:grid-cols-2 gap-6 items-stretch">
+        <div className="mt-8 grid md:grid-cols-2 gap-6 ">
 
           {/* LEFT CARD — centered text & reduced height */}
           <div className="bg-[#0F6EB3] text-white rounded-2xl p-6 shadow-lg 
@@ -39,11 +39,14 @@ const CoreTradeServices: React.FC = () => {
               className="w-full h-full object-cover"
             />
 
-            {/* Overlay */}
-            <div
-              className="absolute inset-0"
-              style={{ backgroundColor: "#0F6EB34D" }}
-            />
+              {/* Gradient Overlay */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(15,110,179,0) 0%, rgba(15,110,179,0.4) 40%, #2e6e9cff 100%)",
+    }}
+  />
 
             {/* Text centered */}
             <div className="absolute inset-0 flex flex-col justify-end px-6 z-10">
