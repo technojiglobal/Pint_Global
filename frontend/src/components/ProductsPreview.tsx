@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface ProductItem {
   title: string;
@@ -13,21 +13,22 @@ interface ProductsPreviewProps {
   products: ProductItem[];
 }
 
-const CARD_WIDTH = 330;
-
 const ProductsPreview: React.FC<ProductsPreviewProps> = ({
   heading = "Products Preview",
   subheading = "Export-grade products responsibly sourced from verified Indian suppliers for global markets.",
-  products
+  products,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
 
   const scroll = (dir: "left" | "right") => {
-    if (!containerRef.current) return;
-    const amount = dir === "right" ? CARD_WIDTH : -CARD_WIDTH;
+    if (!containerRef.current || !cardRef.current) return;
+
+    const cardWidth = cardRef.current.offsetWidth + 20;
+    const scrollAmount = dir === "right" ? cardWidth : -cardWidth;
 
     containerRef.current.scrollBy({
-      left: amount,
+      left: scrollAmount,
       behavior: "smooth",
     });
   };
@@ -37,64 +38,78 @@ const ProductsPreview: React.FC<ProductsPreviewProps> = ({
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <h3 className="text-3xl font-bold text-center text-[#0F6EB3]">
+        <h3 className="text-4xl font-bold text-center text-[#0F6EB3]">
           {heading}
         </h3>
-        <p className="text-center mt-2 text-[#0B3B63]">
-          {subheading}
-        </p>
+        <p className="text-center mt-2 text-lg">{subheading}</p>
 
         {/* Slider */}
-        <div className="mt-12 relative flex items-center">
+        <div className="mt-12 relative flex items-center w-full">
 
-          {/* LEFT ARROW */}
+          {/* LEFT BUTTON */}
           <button
             onClick={() => scroll("left")}
             aria-label="scroll left"
-            className="absolute left-0 bg-[#0F6EB3] text-white rounded-full w-10 h-10 
-            flex items-center justify-center shadow z-20"
+            className="absolute -left-4 bg-[#0F6EB3] text-white rounded-full 
+                       w-11 h-11 flex items-center justify-center 
+                       shadow-md  hover:bg-[#0d5c94] transition"
           >
-            <span className="text-xl font-bold">{"<"}</span>
+            <ChevronLeft size={28} />
           </button>
 
-          {/* SCROLL TRACK */}
+          {/* TRACK */}
           <div
             ref={containerRef}
-            className="flex gap-8 overflow-hidden mx-14"
+            className="flex gap-6 overflow-hidden mx-10 sm:mx-16 scroll-smooth"
           >
             {products.map((p, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 rounded-xl overflow-hidden shadow-lg bg-white"
-                style={{ width: CARD_WIDTH }}
+                ref={i === 0 ? cardRef : null}
+                className="
+                  flex-shrink-0 bg-white rounded-2xl shadow-sm 
+                  border border-[#E6ECF2]
+
+                  w-[70vw]           /* Mobile: one full card */
+                  sm:w-[330px]       /* Tablet */
+                  md:w-[350px]       /* Medium screens */
+                  lg:w-[360px]       /* Desktop: your exact width */
+                "
               >
-                <div className="w-full h-52 overflow-hidden">
+                {/* IMAGE */}
+                <div className="w-full h-[250px] sm:h-[260px] overflow-hidden rounded-t-2xl">
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="w-full h-full object-cover hover:scale-105  transition-transform duration-300"
+                    className="w-full h-full object-cover 
+                               transition-transform duration-300 hover:scale-105"
                   />
                 </div>
 
-                <div className="bg-[#E7F3FF] px-4 py-4">
-                  <h4 className="font-semibold text-[#0F6EB3] text-lg">{p.title}</h4>
-                  <p className="text-sm text-[#0B3B63] mt-1">{p.desc}</p>
+                {/* CONTENT */}
+                <div className="bg-[#F3F7FB] px-5 py-5 rounded-b-2xl border-t-2 border-white">
+                  <h3 className="font-bold text-[#0F6EB3] text-2xl leading-tight">
+                    {p.title}
+                  </h3>
+                  <p className="text-sm font-semibold text-[#0F6EB3] mt-1 opacity-90">
+                    {p.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* RIGHT ARROW */}
+          {/* RIGHT BUTTON */}
           <button
             onClick={() => scroll("right")}
             aria-label="scroll right"
-            className="absolute right-0 bg-[#0F6EB3] text-white rounded-full w-10 h-10 
-            flex items-center justify-center shadow z-20"
+            className="absolute -right-4 bg-[#0F6EB3] text-white rounded-full 
+                       w-12 h-12 flex items-center justify-center 
+                       shadow-md  hover:bg-[#0d5c94] transition"
           >
-            <span className="text-xl font-bold">{">"}</span>
+            <ChevronRight size={28} />
           </button>
         </div>
-          
       </div>
     </section>
   );
