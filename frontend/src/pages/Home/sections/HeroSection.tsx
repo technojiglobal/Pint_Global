@@ -5,8 +5,11 @@ const HeroSection: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="mt-3 relative w-full max-w-[1400px] mx-auto bg-white rounded-3xl overflow-hidden px-4 sm:px-6 md:px-10 py-10 md:py-16">
-
+    <section
+      className="relative w-full max-w-[1400px] mx-auto bg-white rounded-3xl 
+      overflow-hidden px-4 sm:px-6 md:px-10 
+      pt-24 md:pt-32 pb-10 md:pb-16"
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-3xl"
@@ -25,7 +28,7 @@ const HeroSection: React.FC = () => {
         <div className="max-w-3xl">
 
           {/* Heading */}
-          <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight ">
+          <h1 className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight">
             Global Trade. Local Trust.
           </h1>
 
@@ -62,7 +65,6 @@ const HeroSection: React.FC = () => {
         <span className="w-2.5 h-2.5 rounded-full bg-white"></span>
         <span className="w-2.5 h-2.5 rounded-full bg-white"></span>
       </div>
-
     </section>
   );
 };

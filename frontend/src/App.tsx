@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About"; // <-- import your About page
 import Contact from "./pages/Contact/Contact";
 import Product from "./pages/Product/Product";
+import Service from "./pages/Services/Service";
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/products" element={<Product/>} />
+          <Route path="/services" element={<Service/>} />
         </Routes>
       </main>
     </Router>
