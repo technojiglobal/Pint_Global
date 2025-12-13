@@ -69,7 +69,13 @@ const VisionSection: React.FC = () => {
         <div className="absolute inset-0 bg-[#0F6EB3]/60" />
 
         {/* FIXED CARD */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full px-6 flex justify-center">
+       <div className="
+  absolute bottom-0 
+  left-1/2 md:left-[70%]
+  -translate-x-1/2 translate-y-1/2
+  w-full px-6 flex justify-center
+">
+
           <div
             onMouseEnter={() => (hoverRef.current = true)}
             onMouseLeave={() => (hoverRef.current = false)}

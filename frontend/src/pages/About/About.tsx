@@ -1,4 +1,4 @@
-import React from "react";
+
 import AboutIntro from "./sections/AboutIntro";
 import PintMeaning from "./sections/PintMeaning";
 import VisionSection from "./sections/VisionSection";
