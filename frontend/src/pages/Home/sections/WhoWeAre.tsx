@@ -10,7 +10,7 @@ const WhoWeAre: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl text-center font-extrabold text-[#0F6EB3]">Who We Are</h2>
         <p className="mt-6 max-w-3xl mx-auto text-center text-[#0F6EB3]">
-          PINTGLOBAL is a professionally managed export–import company headquartered in India,
+          PINT GLOBAL is a professionally managed export–import company headquartered in India,
           delivering premium-quality products to global markets through transparent processes,
           verified sourcing, and seamless logistics execution.
         </p>

@@ -23,7 +23,7 @@ const FounderSection: React.FC = () => {
 
           <p className="text-white text-base sm:text-lg md:text-base leading-relaxed">
             Driven by a vision to build a global presence in trade and commerce, he founded
-            PINTGLOBAL to create a trusted, transparent, and performance-driven import–export
+            PINT GLOBAL to create a trusted, transparent, and performance-driven import–export
             enterprise. His leadership blends corporate professionalism with entrepreneurial
             vision, focusing strongly on ethical business practices, operational excellence,
             and sustainable global partnerships.

@@ -9,7 +9,7 @@ export default function PintMeaning() {
         ethical business, transparent operations, and long-term client relationships.
       </p>
 
-      <p className="mt-6 font-semibold text-sm sm:text-base md:text-base">Every transaction at PINTGLOBAL is guided by:</p>
+      <p className="mt-6 font-semibold text-sm sm:text-base md:text-base">Every transaction at PINT GLOBAL is guided by:</p>
 
       <div className="mt-8 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-10 max-w-4xl mx-auto">
         {[
