@@ -18,18 +18,26 @@ const Navbar: React.FC = () => {
       <nav className="flex justify-center">
         <div className="w-[94%] sm:w-[92%] max-w-[1200px] bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between">
 
-          {/* Logo */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <img
-              src="/images/logo.png"
-              alt="PintGlobal"
-              className="h-8 sm:h-10 w-auto object-contain"
-            />
-            <h1 className="text-lg sm:text-2xl font-bold text-[#0F6EB3]">PintGlobal</h1>
-          </div>
+         {/* Logo (clickable → Home) */}
+<NavLink
+  to="/"
+  onClick={() => setMenuOpen(false)}
+  className="flex items-center gap-2 sm:gap-3 cursor-pointer"
+>
+  <img
+    src="/images/logo.png"
+    alt="PintGlobal"
+    className="h-8 sm:h-10 w-auto object-contain"
+  />
+  <h1 className="text-lg sm:text-2xl font-bold text-[#0F6EB3]">
+    PintGlobal
+  </h1>
+</NavLink>
+
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex gap-4 md:gap-6 text-sm md:text-base font-medium text-gray-700">
+          <ul className="hidden md:flex ml-auto gap-4 md:gap-6 text-sm md:text-base font-medium text-gray-700 mr-6">
+
             {navItems.map((item) => (
               <li key={item.label}>
                 <NavLink
@@ -38,7 +46,7 @@ const Navbar: React.FC = () => {
                     `cursor-pointer hover:text-[#0F6EB3] transition ${
                       isActive
   ? "text-[#0F6EB3] font-semibold after:block after:h-[3px] after:w-full after:bg-[#0F6EB3] after:rounded-full after:mt-1"
-  : "after:block after:h-[3px] after:w-0 after:bg-[#0F6EB3] after:rounded-full after:mt-1 after:transition-all after:duration-3000 hover:after:w-6"
+  : "after:block after:h-[3px] after:w-0 after:bg-[#0F6EB3] after:rounded-full after:mt-1 after:transition-all after:duration-3000 hover:after:w-full"
 
                     }`
                   }

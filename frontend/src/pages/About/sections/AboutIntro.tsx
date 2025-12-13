@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutIntro: React.FC = () => {
   return (
-    <section className="relative w-full max-w-[1400px] mx-auto bg-white rounded-3xl 
+    <section className="mt-2 relative w-full max-w-[1400px] mx-auto bg-white rounded-3xl 
 overflow-hidden px-4 sm:px-6 md:px-10 
 pt-24 md:pt-32 pb-10 md:pb-16">
 

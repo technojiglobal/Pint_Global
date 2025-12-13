@@ -1,18 +1,7 @@
-import React, { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useEffect, useRef } from "react";
 
 const Certifications: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
-
-  const scroll = (dir: "left" | "right") => {
-    if (!scrollRef.current) return;
-
-    const scrollAmount = dir === "right" ? 260 : -260; 
-    scrollRef.current.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth",
-    });
-  };
 
   const images = [
     "/icons/foreign-trade.png",
@@ -22,32 +11,45 @@ const Certifications: React.FC = () => {
     "/icons/coffee-board.png",
   ];
 
+  // duplicate for seamless loop
+  const loopImages = [...images, ...images];
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let scrollSpeed = 0.5; // smaller = slower
+    let animationId: number;
+
+    const autoScroll = () => {
+      container.scrollLeft += scrollSpeed;
+
+      // reset scroll for infinite loop
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0;
+      }
+
+      animationId = requestAnimationFrame(autoScroll);
+    };
+
+    animationId = requestAnimationFrame(autoScroll);
+
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
   return (
     <section className="bg-white py-10">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        
         <h3 className="text-2xl md:text-3xl text-[#0F6EB3] font-bold">
           Certifications & Licenses
         </h3>
 
-        <div className="relative mt-10 flex items-center">
-
-          {/* LEFT ARROW */}
-          <button
-            onClick={() => scroll("left")}
-            className="absolute left-0  w-12 h-12 bg-[#0F6EB3] hover:bg-[#0d5a96] 
-                       text-white rounded-full flex items-center justify-center shadow-lg"
-          >
-            <ChevronLeft size={28} />
-          </button>
-
-          {/* SCROLL AREA (4 visible images width) */}
+        <div className="mt-10 overflow-hidden">
           <div
             ref={scrollRef}
-            className="flex gap-8 overflow-hidden mx-16"
-            style={{ width: "100%", maxWidth: "900px" }} // fits approx 4 images
+            className="flex gap-10 overflow-hidden whitespace-nowrap"
           >
-            {images.map((src, index) => (
+            {loopImages.map((src, index) => (
               <div key={index} className="flex-shrink-0">
                 <img
                   src={src}
@@ -57,18 +59,7 @@ const Certifications: React.FC = () => {
               </div>
             ))}
           </div>
-
-          {/* RIGHT ARROW */}
-          <button
-            onClick={() => scroll("right")}
-            className="absolute right-0  w-12 h-12 bg-[#0F6EB3] hover:bg-[#0d5a96] 
-                       text-white rounded-full flex items-center justify-center shadow-lg"
-          >
-            <ChevronRight size={28} />
-          </button>
-
         </div>
-
       </div>
     </section>
   );
