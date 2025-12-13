@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 
 interface CardData {
   id: number;
@@ -26,168 +26,92 @@ const cards: CardData[] = [
     title: "Global Logistics",
     image: "/images/start-trade.png",
     points: [
-      "Verified International Network",
-      "Custom Routing Solutions",
-      "Comprehensive Freight Services",
-      "Sample & Bulk Order Support",
-      "Flexible Delivery Options",
-      "End-to-end Global Handling",
+      "Verified suppliers across India",
+      "Custom product sourcing",
+      "Competitive pricing",
+      "Sample support",
+      "Flexible MOQs",
+      "End-to-end coordination"
     ],
   },
 ];
 
 const GlobalSourcing: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const slideDuration = 650;
-
-  const nextCard = () => {
-    if (isAnimating || isPaused) return;
-
-    setIsAnimating(true);
-    setTimeout(() => {
-      setActiveIndex((prev) => (prev + 1) % cards.length);
-      setIsAnimating(false);
-    }, slideDuration);
-  };
-
-  const startAutoSlide = () => {
-    stopAutoSlide();
-    intervalRef.current = setInterval(() => {
-      if (!isPaused) nextCard();
-    }, 3500);
-  };
-
-  const stopAutoSlide = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-  };
-
-  useEffect(() => {
-    startAutoSlide();
-    return () => stopAutoSlide();
-  }, [isPaused]);
-
-  const handleMouseEnter = () => {
-    setIsPaused(true);
-    stopAutoSlide();
-  };
-
-  const handleMouseLeave = () => {
-    setIsPaused(false);
-    startAutoSlide();
-  };
-
   return (
-    <section className="w-full bg-white py-14 overflow-hidden">
-      <h2 className="text-center text-3xl font-bold text-[#0F6EB3] mb-10">
+    <section className="w-full bg-white py-14">
+      <h2 className="text-center text-4xl font-bold text-[#0F6EB3] mb-10">
         Global Sourcing
       </h2>
 
-      <div className="relative w-full max-w-5xl mx-auto h-[420px] sm:h-[380px] md:h-[360px]">
-
-        {cards.map((card, index) => {
-          const isActive = index === activeIndex;
-          const nextIndex = (activeIndex + 1) % cards.length;
-
-          let animationClass = "";
-
-          if (isActive) {
-            animationClass = isAnimating
-              ? "-translate-x-full opacity-0 scale-95"
-              : "translate-x-0 opacity-100 scale-100";
-          }
-
-          if (index === nextIndex) {
-            animationClass = isAnimating
-              ? "translate-x-0 opacity-100 scale-100"
-              : "translate-x-full opacity-0 scale-95";
-          }
-
-          if (!isActive && index !== nextIndex) {
-            animationClass = "opacity-0 pointer-events-none";
-          }
-
-          return (
+      {/* Horizontal scroll container */}
+      <div
+        className="
+          w-full
+          overflow-x-auto
+          overscroll-x-contain
+          [-ms-overflow-style:none]
+          [scrollbar-width:none]
+          [&::-webkit-scrollbar]:hidden
+        "
+      >
+        {/* Cards row */}
+        <div className="flex gap-6 px-4 min-w-max">
+          {cards.map((card) => (
             <div
               key={card.id}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className={`
-                absolute top-0 left-0 right-0 mx-auto
+              className="
+                flex-shrink-0
+                flex
+                gap-4
+                bg-[#F3F7FB]
+                border border-black/10
+                rounded-xl
+                shadow-md
+                p-4
 
-                /* DESKTOP WIDTH */
-                w-[80%] sm:w-[75%] md:w-[70%]
+                w-[90vw]
+                sm:w-[75vw]
+                md:w-[65vw]
+                lg:w-[55vw]
 
-                /* MOBILE WIDTH */
-                max-sm:w-[95%]
-
-                transition-all duration-[650ms]
-                ease-[cubic-bezier(0.3,0.1,0.3,1)]
-                ${animationClass}
-              `}
+                max-sm:flex-col
+              "
             >
-              {/* CARD */}
-              <div
-                className="
-                  flex 
-                  bg-[#F3F7FB] 
-                  rounded-xl shadow-md border border-[#00000021] p-4 gap-4
-                    
-                  /* MOBILE: Stack vertically */
-                  max-sm:flex-col max-sm:gap-3
-                "
-              >
-                {/* IMAGE */}
-                <div className="relative w-[45%] max-sm:w-full">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="
-                      w-full 
-                      
-                      /* DESKTOP HEIGHT */
-                      h-[320px]
-                      
-                      /* MOBILE HEIGHT */
-                      max-sm:h-[250px]
-                      
-                      object-cover rounded-lg
-                    "
-                  />
+              {/* Image */}
+              <div className="relative w-[45%] max-sm:w-full">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="
+                    w-full
+                    h-[320px]
+                    max-sm:h-[250px]
+                    object-cover
+                    rounded-lg
+                  "
+                />
 
-                  <div
-                    className="absolute inset-0 rounded-lg"
-                    style={{
-                      background:
-                        "linear-gradient(180deg, rgba(15,110,179,0) 0%, rgba(15,110,179,0.4) 40%, #2e6e9cff 100%)",
-                    }}
-                  />
-                </div>
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent via-[#0F6EB3]/40 to-[#2e6e9c]" />
+              </div>
 
-                {/* TEXT */}
-                <div className="w-[55%] max-sm:w-full">
-                  <h3 className="text-2xl font-bold text-[#0F6EB3] mb-4 text-left max-sm:text-center">
-                    {card.title}
-                  </h3>
+              {/* Text */}
+              <div className="w-[55%] max-sm:w-full">
+                <h3 className="text-2xl font-bold text-[#0F6EB3] mb-4 max-sm:text-center">
+                  {card.title}
+                </h3>
 
-                  <ul className="space-y-2 max-sm:px-3">
-                    {card.points.map((p, i) => (
-                      <li key={i} className="text-lg flex items-start">
-                        <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3"></span>
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
+                <ul className="space-y-2 max-sm:px-3">
+                  {card.points.map((point, i) => (
+                    <li key={i} className="flex items-start  font-semibold text-lg">
+                      <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          );
-        })}
-
+          ))}
+        </div>
       </div>
     </section>
   );
