@@ -28,7 +28,7 @@ const AboutIntro: React.FC = () => {
 
           {/* Subheading with line break after 'with' */}
           <p className="text-white mt-6 text-base sm:text-lg md:text-xl leading-relaxed">
-           PINTGLOBAL is a professionally managed export–import company headquartered in India,
+           PINT GLOBAL is a professionally managed export–import company headquartered in India,
             delivering high-quality, export-grade products to international markets through transparent trade
             practices, verified sourcing, and reliable global logistics.
           </p> 

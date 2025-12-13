@@ -20,7 +20,7 @@ const Presence: React.FC = () => {
 
       {/* DESCRIPTION */}
       <p className="mt-6 md:mt-8 text-center text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-3 leading-relaxed">
-        <b>PintGlobal</b> continues to expand its international footprint — 
+        <b>Pint Global</b> continues to expand its international footprint — 
         connecting India’s finest products with the world’s fastest-growing markets.
       </p>
 

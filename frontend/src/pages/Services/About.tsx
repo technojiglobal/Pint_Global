@@ -30,7 +30,7 @@ pt-24 md:pt-32 pb-10 md:pb-16">
 
           {/* Subheading */}
           <p className="text-white mt-6 text-base sm:text-lg md:text-xl leading-relaxed">
-           From export execution to international market coverage — PINTGLOBAL delivers seamless, compliant, and reliable global trade solutions.
+           From export execution to international market coverage — PINT GLOBAL delivers seamless, compliant, and reliable global trade solutions.
           </p>
 
         </div>

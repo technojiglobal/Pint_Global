@@ -26,7 +26,7 @@ pt-24 md:pt-32 pb-10 md:pb-16">
 
           {/* Paragraph 1 */}
           <p className="text-white mt-4 text-base sm:text-lg md:text-xl leading-relaxed text-left drop-shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
-            PINTGLOBAL is a professionally managed export–import company headquartered in India,
+            PINT GLOBAL is a professionally managed export–import company headquartered in India,
             delivering high-quality, export-grade products to international markets through transparent
             trade practices, verified sourcing, and reliable global logistics.
           </p>
@@ -41,7 +41,7 @@ pt-24 md:pt-32 pb-10 md:pb-16">
 
           {/* Paragraph 3 */}
           <p className="text-white mt-6 text-base sm:text-lg md:text-xl leading-relaxed text-left drop-shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
-            At PINTGLOBAL, we don’t just trade products — we build long-term global partnerships
+            At PINT GLOBAL, we don’t just trade products — we build long-term global partnerships
             based on trust, performance, and consistency.
           </p>
 

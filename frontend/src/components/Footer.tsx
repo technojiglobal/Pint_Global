@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         {/* BRAND */}
         <div>
           <div className="flex items-center gap-3">
-            <span className="font-bold text-lg">PintGlobal</span>
+            <span className="font-bold text-lg">Pint Global</span>
           </div>
 
           <p className="text-sm mt-3 text-gray-200">

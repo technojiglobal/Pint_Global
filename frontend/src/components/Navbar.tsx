@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
     className="h-8 sm:h-10 w-auto object-contain"
   />
   <h1 className="text-lg sm:text-2xl font-bold text-[#0F6EB3]">
-    PintGlobal
+    Pint Global
   </h1>
 </NavLink>
 
