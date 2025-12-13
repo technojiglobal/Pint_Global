@@ -3,7 +3,7 @@ import IconBox from "../../../components/ui/IconBox";
 
 const WhyChooseUs: React.FC = () => {
   return (
-    <section className="bg-[#0F6EB30D] py-6">
+    <section className="bg-[#0F6EB30D] py-6 mt-8">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Heading */}

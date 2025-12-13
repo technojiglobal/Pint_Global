@@ -12,11 +12,11 @@ const TradeOperations: React.FC = () => {
 ];
 
   return (
-    <section className="w-full px-4 sm:px-6 md:px-10 py-12 md:py-16">
+    <section className="w-full px-4 sm:px-6 md:px-10 py-5 md:py-8">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold text-[#0F6EB3]">
+        <h2 className="text-center text-xl sm:text-2xl md:text-4xl font-bold text-[#0F6EB3]">
           Our Trade Operations
         </h2>
 

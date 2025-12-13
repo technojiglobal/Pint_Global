@@ -6,10 +6,10 @@ const CoreTradeServices: React.FC = () => {
   return (
     <section className="bg-[#0F6EB30D] py-12">
       <div className="max-w-6xl mx-auto px-6">
-        <h3 className="text-2xl md:text-3xl font-bold text-[#0F6EB3] text-center">
+        <h3 className="text-2xl md:text-4xl font-bold text-[#0F6EB3] text-center">
           Our Core Trade Services
         </h3>
-        <p className="text-center mt-2 text-[#0B3B63] max-w-2xl mx-auto">
+        <p className="text-center mt-2  font-semibold max-w-2xl mx-auto">
           Comprehensive export solutions for sourcing, compliance, and global shipping.
         </p>
 
@@ -32,7 +32,7 @@ const CoreTradeServices: React.FC = () => {
           </div>
 
           {/* RIGHT CARD — reduced height, same size as left */}
-          <div className="relative rounded-2xl overflow-hidden shadow-lg min-h-[220px]">
+          <div className="relative rounded-2xl overflow-hidden  shadow-lg min-h-[220px]">
             <img
               src="/images/trade.png"
               alt="Warehouse"
