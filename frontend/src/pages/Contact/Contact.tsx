@@ -1,4 +1,4 @@
-import React from "react";
+
 import AboutIntro from "./AboutIntro";
 import Certifications from "../Home/sections/Certifications";
 import StartTrade from "../About/sections/StartTrade";

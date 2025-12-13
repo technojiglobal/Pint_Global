@@ -22,28 +22,36 @@ const categories: Category[] = [
     markets: "China, South Korea, Malaysia",
     img: "/images/mine.png",
   },
+  {
+    title: "Rice and Grains",
+    markets: "Pure grains from trusted farmers.",
+    img: "/images/riceandgrain.png",
+  },
 ];
 
 const Export: React.FC = () => {
   return (
     <section className="bg-[#F3F7FB] py-10 sm:py-14">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
 
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F6EB3] mb-10">
+        {/* Heading */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-[#0F6EB3] mb-8 sm:mb-10">
           Major Export Categories
         </h2>
 
-        <div className="flex flex-col md:flex-row justify-center gap-4">
+        {/* Cards */}
+        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-6">
+
           {categories.map((item, i) => (
             <div
               key={i}
               className="
                 group relative
-                h-64 sm:h-80 md:h-[400px]
-                w-[260px] md:w-[220px]
-                hover:w-[360px]
+                h-64 sm:h-72 md:h-[380px]
+                w-full sm:w-[260px] md:w-[240px] lg:w-[260px]
+                md:hover:w-[320px]
                 transition-all duration-700 ease-in-out
-                overflow-hidden shadow-lg
+                overflow-hidden shadow-lg rounded-xl
               "
             >
               {/* Image */}
@@ -53,25 +61,27 @@ const Export: React.FC = () => {
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Gradient (kept) */}
+              {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F6EB3]/90 via-[#0F6EB3]/50 to-transparent" />
 
               {/* Text */}
-              <div className="relative z-10 h-full flex flex-col justify-end p-6 text-white">
-                
-                {/* Title (always visible) */}
-                <h3 className="text-lg sm:text-xl font-semibold">
+              <div className="relative z-10 h-full flex flex-col justify-end p-5 text-white">
+
+                {/* Title */}
+                <h3 className="text-base sm:text-lg font-semibold">
                   {item.title}
                 </h3>
 
-                {/* Markets (on hover) */}
+                {/* Markets */}
                 <p
                   className="
                     mt-2 text-xs sm:text-sm leading-relaxed
-                    opacity-0 translate-y-4 max-h-0
-                    group-hover:opacity-100
-                    group-hover:translate-y-0
-                    group-hover:max-h-40
+                    opacity-100 sm:opacity-0
+                    translate-y-0 sm:translate-y-4
+                    max-h-40 sm:max-h-0
+                    sm:group-hover:opacity-100
+                    sm:group-hover:translate-y-0
+                    sm:group-hover:max-h-40
                     transition-all duration-700 ease-in-out
                     overflow-hidden
                   "
@@ -82,6 +92,7 @@ const Export: React.FC = () => {
               </div>
             </div>
           ))}
+
         </div>
 
       </div>

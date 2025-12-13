@@ -1,5 +1,4 @@
-// React import not required for new JSX transform
-import React from "react";
+
 import Export from './Export'
 import Certifications from '../Home/sections/Certifications'
 import StartTrade from '../About/sections/StartTrade'
