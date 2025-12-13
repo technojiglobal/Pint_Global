@@ -40,13 +40,13 @@ const CoreTradeServices: React.FC = () => {
             />
 
               {/* Gradient Overlay */}
-  <div
-    className="absolute inset-0"
-    style={{
-      background:
-        "linear-gradient(180deg, rgba(15,110,179,0) 0%, rgba(15,110,179,0.4) 40%, #2e6e9cff 100%)",
-    }}
-  />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(15,110,179,0) 0%, rgba(15,110,179,0.4) 40%, #2e6e9cff 100%)",
+                }}
+              />
 
             {/* Text centered */}
             <div className="absolute inset-0 flex flex-col justify-end px-6 z-10">
