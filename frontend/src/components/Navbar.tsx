@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
 
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex ml-auto gap-4 md:gap-6 text-sm md:text-base font-medium text-gray-700 mr-6">
+          <ul className="hidden md:flex ml-auto gap-4 md:gap-8 text-sm md:text-base font-medium text-gray-700 mr-24">
 
             {navItems.map((item) => (
               <li key={item.label}>

@@ -81,12 +81,12 @@ const ProductsPreview: React.FC<ProductsPreviewProps> = ({
                 "
               >
                 {/* IMAGE */}
-                <div className="w-full h-[250px] sm:h-[260px] overflow-hidden rounded-t-2xl">
+                <div className="w-full h-[250px] sm:h-[260px] overflow-hidden rounded-t-2xl flex items-center justify-center">
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="w-full h-full object-contain 
-                               transition-transform duration-300 hover:scale-105"
+                    className="w-full h-auto max-h-full object-contain mx-0 block transition-transform duration-200 hover:scale-105 will-change-transform"
+                    loading="lazy"
                   />
                 </div>
 

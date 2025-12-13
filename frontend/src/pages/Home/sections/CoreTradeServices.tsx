@@ -181,10 +181,12 @@
 
 //option - 2
 
-import React, { useState } from "react";
-
+import  { useState } from "react";
+import Button from "../../../components/Button";
+import {useNavigate} from "react-router-dom";
 const CoreTradeServices = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const navigate=useNavigate();
+  const [hoveredCard, setHoveredCard] = useState<'export' | 'sourcing' | null>(null);
 
   const exportServices = [
     "Verified Product Sourcing",
@@ -332,15 +334,7 @@ const CoreTradeServices = () => {
 
         </div>
 
-        {/* View All Services Button */}
-        <div className="flex justify-center mt-10">
-          <button className="bg-[#0F6EB3] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-[#0d5a93] transition-all duration-300 flex items-center gap-2">
-            View All Services
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
+        <Button text="View All Services" onClick={()=>navigate("/services")} />
       </div>
     </section>
   );

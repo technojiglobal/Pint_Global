@@ -3,9 +3,10 @@ import React from "react";
 const FounderSection: React.FC = () => {
   return (
     <section className="py-16">
-      <div className="bg-[#0F6EB3] shadow-inner w-full p-6 sm:p-8 md:p-12 
-                      flex flex-col md:flex-row items-center md:items-start gap-10">
-
+      <div
+        className="bg-[#0F6EB3] shadow-inner w-full p-6 sm:p-8 md:p-12
+                   flex flex-col md:flex-row items-center md:items-start gap-12"
+      >
         {/* LEFT TEXT BLOCK */}
         <div className="flex-1 space-y-6">
           <h2 className="text-4xl sm:text-5xl md:text-5xl font-bold text-white leading-tight">
@@ -29,15 +30,14 @@ const FounderSection: React.FC = () => {
           </p>
         </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full overflow-hidden flex-shrink-0 ">
+        {/* RIGHT IMAGE – INCREASED SIZE */}
+        <div className="w-42 h-42 sm:w-64 sm:h-64 md:w-96 md:h-96 rounded-full overflow-hidden flex-shrink-0">
           <img
             src="/images/founder.png"
             alt="Founder"
             className="w-full h-full object-cover"
           />
         </div>
-
       </div>
     </section>
   );
