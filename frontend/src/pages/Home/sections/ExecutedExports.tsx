@@ -44,7 +44,7 @@ const ExecutedExports = () => {
         <h2 className="text-4xl font-bold text-[#0F6EB3] animate-[fadeUp_0.8s_ease-out]">
           Professionally Executed Exports
         </h2>
-        <p className="mt-2 text-[#0B3B63] text-lg animate-[fadeUp_1s_ease-out]">
+        <p className="mt-5 font-semibold  animate-[fadeUp_1s_ease-out]">
           High-quality products, verified processes, and seamless global delivery.
         </p>
         <div className="mt-6">
@@ -56,7 +56,7 @@ const ExecutedExports = () => {
         {/* Circles */}
         <div
           className="
-            mt-16 flex flex-col md:flex-row justify-center items-center
+            mt-10 flex flex-col md:flex-row justify-center items-center
             gap-0 md:gap-0
           "
         >
@@ -69,7 +69,7 @@ const ExecutedExports = () => {
               style={{ animation: `fadeUp 0.8s ease-out ${index * 0.25}s both` }}
             >
               {/* OUTER RING CONTAINER — ONLY THIS OVERLAPS */}
-              <div className="relative w-64 h-64 flex items-center justify-center md:mx-[-8px]">
+              <div className="relative w-64 h-64 flex items-center justify-center">
 
                 {/* OUTER RING (overlapping) */}
                 <div className="absolute w-full h-full rounded-full border border-[#BFE2F2]" />
