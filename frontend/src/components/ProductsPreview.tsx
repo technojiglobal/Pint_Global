@@ -22,16 +22,20 @@ const ProductsPreview: React.FC<ProductsPreviewProps> = ({
   const cardRef = useRef<HTMLDivElement | null>(null);
 
   const scroll = (dir: "left" | "right") => {
-    if (!containerRef.current || !cardRef.current) return;
+  if (!containerRef.current || !cardRef.current) return;
 
-    const cardWidth = cardRef.current.offsetWidth + 20;
-    const scrollAmount = dir === "right" ? cardWidth : -cardWidth;
+  const styles = window.getComputedStyle(containerRef.current);
+  const gap = parseInt(styles.columnGap || "0", 10);
 
-    containerRef.current.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth",
-    });
-  };
+  const cardWidth = cardRef.current.offsetWidth + gap;
+  const scrollAmount = dir === "right" ? cardWidth : -cardWidth;
+
+  containerRef.current.scrollBy({
+    left: scrollAmount,
+    behavior: "smooth",
+  });
+};
+
 
   return (
     <section className="bg-white py-10">
@@ -81,7 +85,7 @@ const ProductsPreview: React.FC<ProductsPreviewProps> = ({
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="w-full h-full object-cover 
+                    className="w-full h-full object-contain 
                                transition-transform duration-300 hover:scale-105"
                   />
                 </div>
