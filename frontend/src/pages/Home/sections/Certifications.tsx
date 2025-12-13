@@ -35,7 +35,7 @@ const Certifications: React.FC = () => {
           {/* LEFT ARROW */}
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 z-20 w-12 h-12 bg-[#0F6EB3] hover:bg-[#0d5a96] 
+            className="absolute left-0  w-12 h-12 bg-[#0F6EB3] hover:bg-[#0d5a96] 
                        text-white rounded-full flex items-center justify-center shadow-lg"
           >
             <ChevronLeft size={28} />
@@ -61,7 +61,7 @@ const Certifications: React.FC = () => {
           {/* RIGHT ARROW */}
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 z-20 w-12 h-12 bg-[#0F6EB3] hover:bg-[#0d5a96] 
+            className="absolute right-0  w-12 h-12 bg-[#0F6EB3] hover:bg-[#0d5a96] 
                        text-white rounded-full flex items-center justify-center shadow-lg"
           >
             <ChevronRight size={28} />
