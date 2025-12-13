@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Service from "./pages/Services/Service";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About"; // <-- import your About page
 import Contact from "./pages/Contact/Contact";
 import Product from "./pages/Product/Product";
-import Service from "./pages/Services/Service";
+
 
 const App: React.FC = () => {
   return (

@@ -104,7 +104,7 @@ const ProductsPreview: React.FC<ProductsPreviewProps> = ({
             onClick={() => scroll("right")}
             aria-label="scroll right"
             className="absolute -right-4 bg-[#0F6EB3] text-white rounded-full 
-                       w-12 h-12 flex items-center justify-center 
+                       w-10 h-10 flex items-center justify-center 
                        shadow-md  hover:bg-[#0d5c94] transition"
           >
             <ChevronRight size={28} />
