@@ -7,6 +7,7 @@ import About from "./pages/About/About"; // <-- import your About page
 import Contact from "./pages/Contact/Contact";
 import Product from "./pages/Product/Product";
 
+
 const App: React.FC = () => {
   return (
     <Router>

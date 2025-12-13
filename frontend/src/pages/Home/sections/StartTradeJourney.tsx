@@ -31,7 +31,7 @@ const StartTradeJourney: React.FC = () => {
 
                   {/* EMAIL */}
                   <div className="flex items-start bg-[#0F6EB312] p-0.5 md:p-1 gap-3 md:gap-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#0F6EB3] flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 md:w-9 md:h-9 rounded-full bg-[#0F6EB3] flex items-center justify-center flex-shrink-0">
                       <img src="/icons/email.png" alt="email" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
                     </div>
                     <div>
@@ -44,7 +44,7 @@ const StartTradeJourney: React.FC = () => {
 
                   {/* PHONE */}
                   <div className="flex items-start bg-[#0F6EB312] p-0.5 md:p-1 gap-3 md:gap-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#0F6EB3] flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 md:w-9 md:h-9 rounded-full bg-[#0F6EB3] flex items-center justify-center flex-shrink-0">
                       <img src="/icons/call.png" alt="phone" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
                     </div>
                     <div>
@@ -55,7 +55,7 @@ const StartTradeJourney: React.FC = () => {
 
                   {/* ADDRESS */}
                   <div className="flex items-start bg-[#0F6EB312] p-0.5 md:p-1 gap-3 md:gap-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#0F6EB3] flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 md:w-9 md:h-9 rounded-full bg-[#0F6EB3] flex items-center justify-center flex-shrink-0">
                       <img src="/icons/location.png" alt="location" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
                     </div>
                     <div>

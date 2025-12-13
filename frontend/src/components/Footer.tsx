@@ -68,8 +68,7 @@ const Footer: React.FC = () => {
             <li><Link className="hover:underline" to="/about">About Us</Link></li>
             <li><Link className="hover:underline" to="/services">Services</Link></li>
             <li><Link className="hover:underline" to="/products">Products</Link></li>
-            <li><Link className="hover:underline" to="/why-us">Why Choose Us</Link></li>
-            <li><Link className="hover:underline" to="/global-markets">Global Markets</Link></li>
+            
             <li><Link className="hover:underline" to="/contact">Contact</Link></li>
           </ul>
         </div>
