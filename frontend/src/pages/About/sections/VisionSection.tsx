@@ -4,9 +4,13 @@ const VisionSection: React.FC = () => {
   const cards = [
     {
       title: "Our Vision",
-      text: `To become a globally trusted export–import brand known for
-      quality, speed, transparency and ethical trade — empowering
-      businesses across borders through seamless international commerce.`,
+      text: (
+        <p>
+          To become a globally trusted export–import brand known for quality,
+          speed, transparency and ethical trade — empowering businesses across
+          borders through seamless international commerce.
+        </p>
+      ),
     },
     {
       title: "Our Mission",
@@ -26,7 +30,7 @@ const VisionSection: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const hoverRef = useRef(false);
-  const duration = 700;
+  const duration = 600;
 
   useEffect(() => {
     startAutoSlide();
@@ -37,7 +41,7 @@ const VisionSection: React.FC = () => {
     stopAutoSlide();
     intervalRef.current = setInterval(() => {
       if (!hoverRef.current && !isAnimating) {
-        runSlide();
+        triggerSlide();
       }
     }, 3000);
   };
@@ -46,43 +50,17 @@ const VisionSection: React.FC = () => {
     if (intervalRef.current) clearInterval(intervalRef.current);
   };
 
-  const runSlide = () => {
-    if (isAnimating) return;
-
+  const triggerSlide = () => {
     setIsAnimating(true);
-
-    // Change card AFTER exit animation
     setTimeout(() => {
       setIndex((prev) => (prev + 1) % cards.length);
       setIsAnimating(false);
     }, duration);
   };
 
-  const getPositionClass = (i: number) => {
-    const nextIndex = (index + 1) % cards.length;
-
-    // ACTIVE CARD
-    if (i === index) {
-      return isAnimating
-        ? "-translate-x-full opacity-0 scale-90 z-0" // sliding out to left
-        : "translate-x-0 opacity-100 scale-110 z-30"; // active center
-    }
-
-    // NEXT CARD: only visible while sliding in
-    if (i === nextIndex) {
-      return isAnimating
-        ? "translate-x-0 opacity-100 scale-110 z-30" // sliding into center
-        : "translate-x-full opacity-0 scale-90 z-0"; // hidden until animation starts
-    }
-
-    // ALL OTHER CARDS ALWAYS HIDDEN
-    return "opacity-0";
-  };
-
   return (
     <section className="w-full">
       <div className="relative w-full h-[70vh] md:h-[80vh]">
-
         {/* Background */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -90,36 +68,49 @@ const VisionSection: React.FC = () => {
         />
         <div className="absolute inset-0 bg-[#0F6EB3]/60" />
 
-        {/* SLIDER */}
+        {/* FIXED CARD */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full px-6 flex justify-center">
           <div
-            className="relative w-full max-w-xl h-[280px] sm:h-[330px] overflow-visible"
+            onMouseEnter={() => (hoverRef.current = true)}
+            onMouseLeave={() => (hoverRef.current = false)}
+            className="
+              relative
+              w-full max-w-xl
+              h-[280px] sm:h-[330px]
+              bg-white
+              rounded-2xl
+              shadow-xl
+              p-6 md:p-8
+              overflow-hidden
+            "
           >
-            {cards.map((card, i) => (
+            {/* TITLE (fixed, no animation) */}
+            <h3 className="text-xl md:text-3xl font-bold underline underline-offset-4 text-[#0F6EB3]">
+              {cards[index].title}
+            </h3>
+
+            {/* TEXT ANIMATION AREA */}
+            <div className="relative mt-4 h-[170px] sm:h-[200px] overflow-hidden">
               <div
-                key={i}
-                onMouseEnter={() => (hoverRef.current = true)}
-                onMouseLeave={() => (hoverRef.current = false)}
+                key={index}
                 className={`
-                  absolute top-0 left-0 w-full bg-white rounded-2xl shadow-xl p-6 md:p-8
-                  transform-gpu transition-all duration-[700ms]
+                  absolute inset-0
+                  text-sm md:text-lg leading-relaxed
+                  transition-all duration-[600ms]
                   ease-[cubic-bezier(0.25,0.8,0.25,1)]
-                  ${getPositionClass(i)}
+                  ${isAnimating
+                    ? "-translate-x-full opacity-0"
+                    : "translate-x-0 opacity-100"}
                 `}
               >
-                <h3 className="text-xl md:text-3xl font-bold underline underline-offset-4 text-[#0F6EB3]">
-                  {card.title}
-                </h3>
-
-                <div className="mt-3 text-sm md:text-lg leading-relaxed">
-                  {card.text}
-                </div>
+                {cards[index].text}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
 
+      {/* Spacer for overlap */}
       <div className="h-48"></div>
     </section>
   );
